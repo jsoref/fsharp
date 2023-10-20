@@ -2059,7 +2059,7 @@ let GetBannerText tcConfigB =
     else
         ""
 
-/// FSC only help. (FSI has it's own help function).
+/// FSC only help. (FSI has its own help function).
 let GetHelpFsc tcConfigB (blocks: CompilerOptionBlock list) =
 
     GetBannerText tcConfigB + GetCompilerOptionBlocks blocks tcConfigB.bufferWidth
@@ -2144,7 +2144,7 @@ let abbreviatedFlagsFsc tcConfigB =
             Some(FSComp.SR.optsShortFormOf ("--target library"))
         )
 
-        // FSC help abbreviations. FSI has it's own help options...
+        // FSC help abbreviations. FSI has its own help options...
         CompilerOption(
             "?",
             tagNone,
