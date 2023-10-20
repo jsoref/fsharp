@@ -565,9 +565,9 @@ namespace Microsoft.VisualStudio.FSharp.ProjectSystem
             bool isSameFile = NativeMethods.IsSamePath(newFilePath, this.Url);
 
             // Currently we do not support if the new directory is located outside the project cone
-            string projectCannonicalDirecoryName = new Uri(this.ProjectMgr.ProjectFolder).LocalPath;
-            projectCannonicalDirecoryName = projectCannonicalDirecoryName.TrimEnd(Path.DirectorySeparatorChar);
-            if (!isSamePath && newCanonicalDirectoryName.IndexOf(projectCannonicalDirecoryName, StringComparison.OrdinalIgnoreCase) == -1)
+            string projectCanonicalDirecoryName = new Uri(this.ProjectMgr.ProjectFolder).LocalPath;
+            projectCanonicalDirecoryName = projectCanonicalDirecoryName.TrimEnd(Path.DirectorySeparatorChar);
+            if (!isSamePath && newCanonicalDirectoryName.IndexOf(projectCanonicalDirecoryName, StringComparison.OrdinalIgnoreCase) == -1)
             {
                 errorMessage = String.Format(CultureInfo.CurrentCulture, SR.GetString(SR.LinkedItemsAreNotSupported, CultureInfo.CurrentUICulture), Path.GetFileNameWithoutExtension(newFilePath));
                 throw new InvalidOperationException(errorMessage);
@@ -579,7 +579,7 @@ namespace Microsoft.VisualStudio.FSharp.ProjectSystem
             {
                 targetContainer = this.Parent;
             }
-            else if (NativeMethods.IsSamePath(newCanonicalDirectoryName, projectCannonicalDirecoryName))
+            else if (NativeMethods.IsSamePath(newCanonicalDirectoryName, projectCanonicalDirecoryName))
             {
                 //the projectnode is the target container
                 targetContainer = this.ProjectMgr;
@@ -929,7 +929,7 @@ namespace Microsoft.VisualStudio.FSharp.ProjectSystem
         /// <summary>
         /// Get's called to rename the eventually running document this hierarchyitem points to
         /// </summary>
-        /// returns FALSE if the doc can not be renamed
+        /// returns FALSE if the doc cannot be renamed
         public bool RenameDocument(string oldName, string newName)
         {
             IVsRunningDocumentTable pRDT = this.GetService(typeof(IVsRunningDocumentTable)) as IVsRunningDocumentTable;
