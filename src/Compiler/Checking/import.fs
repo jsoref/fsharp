@@ -276,7 +276,7 @@ For value types, a value is passed even though it is always 0
     let inline evaluateFirstOrderNullnessAndAdvance (ilt:ILType) (flags:NullableFlags) = 
         match ilt with
         | ILType.Value tspec when tspec.GenericArgs.IsEmpty -> KnownWithoutNull, flags
-        // System.Nullable is special-cased in C# spec for nullnes metadata.
+        // System.Nullable is special-cased in C# spec for nullness metadata.
         // You CAN assign 'null' to it, and when boxed, it CAN be boxed to 'null'.
         | ILType.Value tspec when tspec.Name = "Nullable`1" && tspec.Enclosing = ["System"] -> KnownWithoutNull, flags
         | ILType.Value _  -> KnownWithoutNull, flags.Advance()

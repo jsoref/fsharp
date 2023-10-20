@@ -637,7 +637,7 @@ let test =
 
                  
 [<Fact>]
-let ``Nullnesss support for F# types`` () = 
+let ``Nullness support for F# types`` () = 
     FSharp """module MyLibrary
 type MyDu = A | B
 type MyRecord = {X:int;Y:string}
