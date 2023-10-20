@@ -7658,7 +7658,7 @@ let rec f l =
         AssertCompListContainsAll(completions, ["Ancestors"; "AncestorsAndSelf"])
 
     [<Test>]
-    member this.``Visibility.InternalMethods.DefInSameAssambly``() =
+    member this.``Visibility.InternalMethods.DefInSameAssembly``() =
         this.VerifyDotCompListContainAllAtStartOfMarker(
             fileContents = """
                 module CodeAccessibility

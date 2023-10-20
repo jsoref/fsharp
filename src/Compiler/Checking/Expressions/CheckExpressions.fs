@@ -9016,7 +9016,7 @@ and TcTraitItemThen (cenv: cenv) overallTy env objOpt traitInfo tpenv mItem dela
     // Check and apply the arguments
     let resExpr, tpenv = TcDelayed cenv overallTy env tpenv mItem applicableExpr exprTy ExprAtomicFlag.NonAtomic delayed
 
-    // Aply the wrapper to pre-evaluate the object if any
+    // Apply the wrapper to pre-evaluate the object if any
     wrapper resExpr, tpenv
 
 and TcImplicitOpItemThen (cenv: cenv) overallTy env id sln tpenv mItem delayed =
