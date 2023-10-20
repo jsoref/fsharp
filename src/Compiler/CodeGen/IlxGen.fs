@@ -490,7 +490,7 @@ let mkILTyForCompLoc cloc =
     mkILNonGenericBoxedTy (TypeRefForCompLoc cloc)
 
 /// Compute visibility for type members
-/// based on hidden and acessibility from the source code
+/// based on hidden and accessibility from the source code
 /// when hidden and realsig is specified then
 ///     as typed in source code, I.e internal or public
 /// when hidden and not realsig is specified then
@@ -5165,7 +5165,7 @@ and GenAsmCode cenv cgbuf eenv (il, tyargs, args, returnTys, m) sequel =
             | I_ldsflda fspec, _ -> I_ldsflda(modFieldSpec fspec)
             | EI_ilzero(ILType.TypeVar _), [ tyarg ] -> EI_ilzero tyarg
             | AI_nop, _ -> i
-            // These are embedded in the IL for a an initonly ldfld, i.e.
+            // These are embedded in the IL for an initonly ldfld, i.e.
             // here's the relevant comment from tc.fs
             //     "Add an I_nop if this is an initonly field to make sure we never recognize it as an lvalue. See mkExprAddrOfExpr."
 

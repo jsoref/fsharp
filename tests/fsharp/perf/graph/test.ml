@@ -412,7 +412,7 @@ end
     | Found -> true
 
 
-(* Check whether there is a an edge from node to itself *)
+(* Check whether there is an edge from node to itself *)
   let selfLoop t node = 
     let nodeI = nodeInfo t node in
     NodeSet.contains node nodeI.succ

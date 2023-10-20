@@ -1230,7 +1230,7 @@ for i in 0..a."]
         AssertCtrlSpaceCompleteContains code "for" ["form"] []  // 'for' is a keyword, but should not prevent completion
     
     [<Test>]
-    member public this.``ObjInstance.InheritedClass.MethodsWithDiffAccessbility``() =
+    member public this.``ObjInstance.InheritedClass.MethodsWithDiffAccessibility``() =
         AssertAutoCompleteContainsNoCoffeeBreak 
           [ "type Base =
    val mutable baseField : int
@@ -1250,7 +1250,7 @@ derived.derivedField"]
           [ "baseFieldPrivate"; "derivedFieldPrivate" ] // should not contain
 
     [<Test>]
-    member public this.``ObjInstance.InheritedClass.MethodsWithDiffAccessbilityWithSameNameMethod``() =
+    member public this.``ObjInstance.InheritedClass.MethodsWithDiffAccessibilityWithSameNameMethod``() =
         AssertAutoCompleteContainsNoCoffeeBreak 
           [ "type Base =
    val mutable baseField : int
@@ -4865,7 +4865,7 @@ let x = query { for bbbb in abbbbc(*D0*) do
                             
     /// There was a bug (2584) that IntelliSense should treat 'int' as a type instead of treating it as a function
     /// However, this is now deprecated behavior. We want the user to use 'System.Int32' and 
-    /// we generally prefer information from name resolution (aslo see 4405)
+    /// we generally prefer information from name resolution (also see 4405)
     [<Test>]
     member public this.``PrimTypeAndFunc``() =     
         let code =
@@ -5339,7 +5339,7 @@ let x = query { for bbbb in abbbbc(*D0*) do
     [<Test>]
     [<Category("Unit of Measure")>]
     // Verify that we display the correct list of Unit of Measure (Names) in the autocomplete window. 
-    // This also ensures that no UoM are accidenatally added or removed.
+    // This also ensures that no UoM are accidentally added or removed.
     member public this.``UnitMeasure.UnitNames``() =
         AssertAutoCompleteContains
           [ "Microsoft.FSharp.Data.UnitSystems.SI.UnitNames."]
@@ -5352,7 +5352,7 @@ let x = query { for bbbb in abbbbc(*D0*) do
     [<Test>]
     [<Category("Unit of Measure")>]
     // Verify that we display the correct list of Unit of Measure (Symbols) in the autocomplete window. 
-    // This also ensures that no UoM are accidenatally added or removed.
+    // This also ensures that no UoM are accidentally added or removed.
     member public this.``UnitMeasure.UnitSymbols``() =
         AssertAutoCompleteContains
           [ "Microsoft.FSharp.Data.UnitSystems.SI.UnitSymbols."]
@@ -5984,7 +5984,7 @@ let rec f l =
                     interface IFoo with
                         member this.DoStuff () = "Return a string"
                         member this.DoStuff2 (x, y) z = sprintf "Arguments were (%d, %d) %s" x y z
-                // instanceOfIFoo is an instance of an anonomyous class which implements IFoo
+                // instanceOfIFoo is an instance of an anonymous class which implements IFoo
                 let instanceOfIFoo = {
                                         new IFoo with
                                             member this.DoStuff () = "Implement IFoo"

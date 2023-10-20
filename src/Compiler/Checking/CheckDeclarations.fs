@@ -3862,12 +3862,12 @@ module EstablishTypeDefinitionCores =
                 | _ ->
                     acc
 
-            // collect edges from an a struct field (which is struct-contained in tycon)
+            // collect edges from a struct field (which is struct-contained in tycon)
             let rec accStructField (structTycon: Tycon) structTyInst (fspec: RecdField) (doneTypes, acc) =
                 let fieldTy = actualTyOfRecdFieldForTycon structTycon structTyInst fspec
                 accStructFieldType structTycon structTyInst fspec fieldTy (doneTypes, acc)
 
-            // collect edges from an a struct field (given the field type, which may be expanded if it is a type abbreviation)
+            // collect edges from a struct field (given the field type, which may be expanded if it is a type abbreviation)
             and accStructFieldType structTycon structTyInst fspec fieldTy (doneTypes, acc) =
                 let fieldTy = stripTyparEqns fieldTy
                 match fieldTy with

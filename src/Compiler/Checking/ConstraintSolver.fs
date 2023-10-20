@@ -2646,7 +2646,7 @@ and SolveNullnessSupportsNull (csenv: ConstraintSolverEnv) ndeep m2 (trace: Opti
             | NullnessInfo.WithoutNull ->   
                 if g.checkNullness then
                     // If a type would allow null in older rules of F#, we can just emit a warning.
-                    // In the opposite case, we keep this as an an error to avoid generating incorrect code (e.g. assigning null to an int)
+                    // In the opposite case, we keep this as an error to avoid generating incorrect code (e.g. assigning null to an int)
                     if (TypeNullIsExtraValue g m ty) then
                         return! WarnD(ConstraintSolverNullnessWarningWithType(denv, ty, n1, m, m2))
                     else

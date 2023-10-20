@@ -181,7 +181,7 @@ cache <- name
     |> shouldSucceed
 
 [<Fact>]
-let ``Mutable string binding assigned to null and matched againts null``() = 
+let ``Mutable string binding assigned to null and matched against null``() = 
     FSharp """
 module MyLib
 
