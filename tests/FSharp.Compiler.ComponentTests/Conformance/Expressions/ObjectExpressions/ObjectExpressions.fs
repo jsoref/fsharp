@@ -214,7 +214,7 @@ let f() = { new BaseHashtable<_,_>(2) with
          ]
          
     [<Fact>]
-    let ``Object expression can not implementing an interface when it contains a method with no types that can refer to the type for which the implementation is being used`` () =
+    let ``Object expression cannot implement an interface when it contains a method with no types that can refer to the type for which the implementation is being used`` () =
         Fsx """
 type AsString =
     abstract member asString: unit -> string
