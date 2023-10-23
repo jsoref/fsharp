@@ -9227,7 +9227,7 @@ let TypeNullIsTrueValue g ty =
     || isUnitTy g ty
 
 /// Indicates if unbox<T>(null) is actively rejected at runtime.   See nullability RFC.  This applies to types that don't have null
-/// as a valid runtime representation under old compatiblity rules.
+/// as a valid runtime representation under old compatibility rules.
 let TypeNullNotLiked g m ty = 
        not (TypeNullIsExtraValue g m ty) 
     && not (TypeNullIsTrueValue g ty) 
