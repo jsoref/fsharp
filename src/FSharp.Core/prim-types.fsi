@@ -3806,7 +3806,7 @@ namespace Microsoft.FSharp.Core
         /// <code lang="fsharp">
         /// let l1 = ['a'; 'b'; 'c']
         /// let l2 = ['d'; 'e'; 'f']
-        /// l1 @ l2   //  Evalulates to ['a'; 'b'; 'c'; 'd'; 'e'; 'f']
+        /// l1 @ l2   //  Evaluates to ['a'; 'b'; 'c'; 'd'; 'e'; 'f']
         /// </code>
         /// </example>
         /// 

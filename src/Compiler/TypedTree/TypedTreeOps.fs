@@ -9190,7 +9190,7 @@ let changeWithNullReqTyToVariable g reqTy =
     | true -> reqTy
 
 /// When calling a null-allowing API, we prefer to infer a without null argument for idiomatic F# code.
-/// That is, unless caller explicitely marks a value (e.g. coming from a function parameter) as WithNull, it should not be infered as such.
+/// That is, unless caller explicitly marks a value (e.g. coming from a function parameter) as WithNull, it should not be infered as such.
 let reqTyForArgumentNullnessInference g actualTy reqTy =
     // Only change reqd nullness if actualTy is an inference variable
     match tryDestTyparTy g actualTy with
