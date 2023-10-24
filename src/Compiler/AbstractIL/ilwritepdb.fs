@@ -345,7 +345,7 @@ type PortablePdbGenerator
 
     let docs = info.Documents
 
-    // The metadata to wite to the PoortablePDB (Roslyn = _debugMetadataOpt)
+    // The metadata to wite to the PortablePDB (Roslyn = _debugMetadataOpt)
 
     let metadata = MetadataBuilder()
 
