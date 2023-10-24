@@ -148,7 +148,7 @@ let testTypeAnnotationForRecursiveBinding () =
  * -------------------------------------------------------------------- *)
 
 (* TLR letrec, with only some functions going TLR.
-   Required optimisations off to hit bug.
+   Required optimizations off to hit bug.
    Fix: use SELF-CARRYING env values.
 *)
 
