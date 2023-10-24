@@ -4667,7 +4667,7 @@ and GenIndirectCall cenv cgbuf eenv (funcTy, tyargs, curriedArgs, m) sequel =
 
     CountCallFuncInstructions()
 
-    // Generate the code code an ILX callfunc operation
+    // Generate the code for an ILX callfunc operation
     let instrs =
         EraseClosures.mkCallFunc
             cenv.ilxPubCloEnv
@@ -7533,7 +7533,7 @@ and GenDecisionTreeSuccess
 
         let genTargetInfoOpt =
             if generateTargetNow then
-                // Fenerate the targets in-order only
+                // Generate the targets in-order only
                 targetNext.Value <- targetNext.Value + 1
                 Some(GenDecisionTreeTarget cenv cgbuf stackAtTargets targetInfo sequel)
             else
