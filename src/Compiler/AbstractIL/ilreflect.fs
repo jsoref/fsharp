@@ -203,8 +203,8 @@ type TypeBuilder with
 
         typB.DefineGenericParameters gps
 
-    member typB.DefineConstructorAndLog(attrs, cconv, parms) =
-        let consB = typB.DefineConstructor(attrs, cconv, parms)
+    member typB.DefineConstructorAndLog(attrs, cconv, params_) =
+        let consB = typB.DefineConstructor(attrs, cconv, params_)
 
         if logRefEmitCalls then
             printfn
@@ -213,7 +213,7 @@ type TypeBuilder with
                 (abs <| hash typB)
                 (LanguagePrimitives.EnumToValue attrs)
                 cconv
-                parms
+                params_
 
         consB
 

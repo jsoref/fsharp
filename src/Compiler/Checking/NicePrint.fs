@@ -652,8 +652,8 @@ module PrintTypes =
             [ for a in attrs.AsArray() do
                 let name =  a.Method.DeclaringType.BasicQualifiedName
                 if name.StartsWith("System.Diagnostics.CodeAnalysis") then
-                    let parms, _args = decodeILAttribData a 
-                    layoutILAttrib (denvShortNames()) (a.Method.DeclaringType, parms)
+                    let params_, _args = decodeILAttribData a 
+                    layoutILAttrib (denvShortNames()) (a.Method.DeclaringType, params_)
             ]
         match attrsL with
         | [] -> restL

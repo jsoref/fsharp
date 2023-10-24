@@ -425,7 +425,7 @@ val ComputeAccessRights:
     eFamilyType: TyconRef option ->
         AccessorDomain
 
-/// Compute the available access rights and module/entity compilation path for a paricular location in code
+/// Compute the available access rights and module/entity compilation path for a particular location in code
 val ComputeAccessAndCompPath:
     g: TcGlobals ->
     env: TcEnv ->
