@@ -399,7 +399,7 @@ printfn ""%A"" result
         resolverPackageRoots <- result.Roots
         resolverReferences <- result.Resolutions
 
-        use _nativeDepencyResolver = new NativeDllResolveHandler(NativeResolutionProbe(nativeProbingRoots))
+        use _nativeDependencyResolver = new NativeDllResolveHandler(NativeResolutionProbe(nativeProbingRoots))
 
         // Build and execute script
         let referenceText =

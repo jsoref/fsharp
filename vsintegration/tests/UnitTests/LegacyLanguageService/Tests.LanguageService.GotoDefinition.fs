@@ -147,7 +147,7 @@ type UsingMSBuild()  =
             marker = "123456I")
            
     [<Test>]
-    member public this.``OnTypeDefintion``() =
+    member public this.``OnTypeDefinition``() =
         this.VerifyGoToDefnSuccessAtStartOfMarker(
             fileContents = """
                 //regression test for bug 2516
@@ -454,7 +454,7 @@ type UsingMSBuild()  =
             addtlRefAssy = [PathRelativeToTestAssembly(@"DefinitionLocationAttributeFileDoesnotExist.dll")])
 
     [<Test>]
-    member public this.``ModuleDefintion``() =
+    member public this.``ModuleDefinition``() =
         this.VerifyGoToDefnSuccessAtStartOfMarker(
             fileContents = """
                 //regretion test for bug 2517
@@ -465,7 +465,7 @@ type UsingMSBuild()  =
             definitionCode = "module Foo (*MarkerModuleDefinition*) =")
 
     [<Test>]
-    member public this.``Record.Field.Defintion``() = 
+    member public this.``Record.Field.Definition``() = 
         this.VerifyGoToDefnSuccessAtStartOfMarker(
             fileContents = """
                 //regretion test for bug 2518
