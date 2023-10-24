@@ -4285,7 +4285,7 @@ let x = query { for bbbb in abbbbc(*D0*) do
         gpatcc.AssertExactly(0,0)
 
     // When the module isn't empty, we should show completion for the module
-    // (and not type-inferrence based completion on strings - therefore test for 'Chars')
+    // (and not type-inference based completion on strings - therefore test for 'Chars')
     
     [<Test>]
     member public this.``Obsolete.TopLevelModule``() =
@@ -6891,7 +6891,7 @@ let rec f l =
         AssertCompListIsEmpty(completions)
 
     [<Test>]
-    member this.``Identifier.AsClassName.Uninitial``() =
+    member this.``Identifier.AsClassName.InInitial``() =
         this.VerifyDotCompListIsEmptyAtStartOfMarker(
             fileContents = """
                 type f1(*MarkerType*) = 
@@ -6899,13 +6899,13 @@ let rec f l =
             marker = "(*MarkerType*)")
 
     [<Test>]
-    member this.``Identifier.AsFunctionName.UnInitial``() =
+    member this.``Identifier.AsFunctionName.InInitial``() =
         this.VerifyDotCompListIsEmptyAtStartOfMarker(
             fileContents = """let f2(*MarkerFunctionIdentifier*) x = x+1 """,
             marker = "(*MarkerFunctionIdentifier*)")
 
     [<Test>]
-    member this.``Identifier.AsParameter.UnInitial``() =
+    member this.``Identifier.AsParameter.InInitial``() =
         this.VerifyDotCompListIsEmptyAtStartOfMarker(
             fileContents = """ let f3 x(*MarkerParam*) = x+1""",
             marker = "(*MarkerParam*)")

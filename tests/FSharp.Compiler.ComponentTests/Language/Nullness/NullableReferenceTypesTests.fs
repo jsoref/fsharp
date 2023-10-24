@@ -240,7 +240,7 @@ let mkCacheInt32 ()   =
 let ``Can  infer underscore or null``() = 
     FSharp """
 module MyLib
-let iAcceptNullPartiallyInfered(arg: _ | null) = 42
+let iAcceptNullPartiallyInferred(arg: _ | null) = 42
 let iHaveMissingContraint(arg: 'a | null) = 42
     """
     |> asLibrary
@@ -346,9 +346,9 @@ let ``Type inference with sprintfn`` () =
     FSharp """module MyLibrary
 let needsString(x:string) = ()
 
-let myTopFunction inferedVal = 
-    printfn "This is it %s" inferedVal  // There was a regression infering this to be (string | null)
-    needsString inferedVal
+let myTopFunction inferredVal = 
+    printfn "This is it %s" inferredVal  // There was a regression inferring this to be (string | null)
+    needsString inferredVal
 """
     |> asLibrary
     |> typeCheckWithStrictNullness

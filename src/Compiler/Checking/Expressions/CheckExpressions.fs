@@ -1038,7 +1038,7 @@ let TcAddNullnessToType (warn: bool) (cenv: cenv) (env: TcEnv) nullness innerTyC
                 AddCxTypeIsReferenceType env.DisplayEnv cenv.css m NoTrace innerTyC
 
             if not g.compilingFSharpCore && isTyparTy g innerTyC then
-                // A typar might be later infered into a type not supporting `| null|, like tuple or anon.
+                // A typar might be later inferred into a type not supporting `| null|, like tuple or anon.
                 // Repeat the check in post inference
                 AddCxTypeCanCarryNullnessInfo env.DisplayEnv cenv.css m innerTyC nullness
 
