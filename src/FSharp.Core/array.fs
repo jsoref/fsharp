@@ -2572,8 +2572,8 @@ module Array =
             let sortingComparer: IComparer<'T> =
                 LanguagePrimitives.FastGenericComparerCanBeNull<'T>
 
-            let partioningFunc = compare
-            sortInPlaceWithHelper partioningFunc sortingComparer array
+            let partitioningFunc = compare
+            sortInPlaceWithHelper partitioningFunc sortingComparer array
 
         [<CompiledName("SortWith")>]
         let sortWith (comparer: 'T -> 'T -> int) (array: 'T array) =
