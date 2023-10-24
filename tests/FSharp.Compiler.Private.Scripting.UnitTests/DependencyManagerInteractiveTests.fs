@@ -264,7 +264,7 @@ TorchSharp.Tensor.LongTensor.From([| 0L .. 100L |]).Device
 
     [<Fact>]
     member _.``Use Dependency Manager to restore packages with native dependencies, build and run script that depends on the results``() =
-        // Skip test on arm64, because there is not an arm64 netive library
+        // Skip test on arm64, because there is not an arm64 native library
         if RuntimeInformation.ProcessArchitecture = Architecture.Arm64 then
             ()
         else
@@ -364,7 +364,7 @@ printfn ""%A"" result
 
     [<Fact>]
     member _.``Use NativeResolver to resolve native dlls.``() =
-        // Skip test on arm64, because there is not an arm64 netive library
+        // Skip test on arm64, because there is not an arm64 native library
         if RuntimeInformation.ProcessArchitecture = Architecture.Arm64 then
             ()
         else
@@ -450,7 +450,7 @@ printfn ""%A"" result
 
     [<Fact>]
     member _.``Use AssemblyResolver to resolve assemblies``() =
-        // Skip test on arm64, because there is not an arm64 netive library
+        // Skip test on arm64, because there is not an arm64 native library
         if RuntimeInformation.ProcessArchitecture = Architecture.Arm64 then
             ()
         else

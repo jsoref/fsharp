@@ -40,7 +40,7 @@ module SerializableAttribute =
 
     // SOURCE=ToplevelNamespace.fs SCFLAGS="-a -g --out:ToplevelNamespace.dll --test:EmitFeeFeeAs100001 --optimize-" COMPILE_ONLY=1 POSTCMD="..\\CompareIL.cmd ToplevelNamespace.dll"		# ToplevelNamespace.fs - Desktop
     [<Theory; Directory(__SOURCE_DIRECTORY__,BaselineSuffix=".RealInternalSignatureOff",  Includes=[|"ToplevelNamespace.fs"|])>]
-    let ``ToplevelNamespacec_RealInternalSignatureOff_fs`` compilation =
+    let ``ToplevelNamespace_RealInternalSignatureOff_fs`` compilation =
         compilation
         |> withRealInternalSignatureOff
         |> verifyCompilation

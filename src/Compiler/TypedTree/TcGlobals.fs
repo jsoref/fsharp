@@ -1079,7 +1079,7 @@ type TcGlobals(
             | true, builder -> builder tinst nullness
             | _ -> TType_app (tcref, tinst, nullness)
 
-  // Adding an unnecessary "let" instead of inlining into a muiti-line pipelined compute-once "member val" that is too complex for @dsyme
+  // Adding an unnecessary "let" instead of inlining into a multi-line pipelined compute-once "member val" that is too complex for @dsyme
   let v_attribs_Unsupported = [
         tryFindSysAttrib "System.Runtime.CompilerServices.ModuleInitializerAttribute"
         tryFindSysAttrib "System.Runtime.CompilerServices.CallerArgumentExpressionAttribute"
