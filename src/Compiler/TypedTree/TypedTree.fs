@@ -2363,7 +2363,7 @@ type Typar =
         | _, Some optData -> optData.typar_attribs <- attribs
         | _ -> x.typar_opt_data <- Some { typar_il_name = None; typar_xmldoc = XmlDoc.Empty; typar_constraints = []; typar_attribs = attribs; typar_is_contravariant = false }
 
-    /// Get the XML documetnation for the type parameter
+    /// Get the XML documentation for the type parameter
     member x.XmlDoc =
         match x.typar_opt_data with
         | Some optData -> optData.typar_xmldoc

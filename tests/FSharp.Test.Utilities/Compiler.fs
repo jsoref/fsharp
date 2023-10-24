@@ -1328,7 +1328,7 @@ Actual:
         if reader.ImportScopes.Count < 2 then
             failwith $"Expected to have at least 2 import scopes, but found {reader.ImportScopes.Count}."
 
-        // Sanity check: explicitly test that first import scope is indeed an apty one (i.e. there are no imports).
+        // Sanity check: explicitly test that first import scope is indeed an empty one (i.e. there are no imports).
         let rootScope = reader.ImportScopes.ToImmutableArray().Item(0) |> reader.GetImportScope
 
         let rootScopeImportsLength = rootScope.GetImports().ToImmutableArray().Length
