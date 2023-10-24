@@ -2173,7 +2173,7 @@ let x = new MyClass2(0)
 
     // No completion list at the end of file. 
     [<Test>]
-    member public this.``Idenfitier.AfterDefined.Bug1545``() = 
+    member public this.``Identifier.AfterDefined.Bug1545``() = 
         this.AutoCompletionListNotEmpty
             ["let x = [|\"hello\"|]"
              "x."]
@@ -5435,7 +5435,7 @@ let x = query { for bbbb in abbbbc(*D0*) do
             list = ["Chars"; "ToString"; "Length"; "GetHashCode"])   
             
     [<Test>]
-    member this.``Idenfifier.String.Negative``() =
+    member this.``Identifier.String.Negative``() =
         this.VerifyDotCompListDoesNotContainAnyAtStartOfMarker(
             fileContents = """
                 open System
@@ -6901,8 +6901,8 @@ let rec f l =
     [<Test>]
     member this.``Identifier.AsFunctionName.UnInitial``() =
         this.VerifyDotCompListIsEmptyAtStartOfMarker(
-            fileContents = """let f2(*MarkerFunctionIndentifier*) x = x+1 """,
-            marker = "(*MarkerFunctionIndentifier*)")
+            fileContents = """let f2(*MarkerFunctionIdentifier*) x = x+1 """,
+            marker = "(*MarkerFunctionIdentifier*)")
 
     [<Test>]
     member this.``Identifier.AsParameter.UnInitial``() =
