@@ -1522,7 +1522,7 @@ notAFunctionButMaybeDeclaration,"This value is not a function and cannot be appl
 3250,expressionHasNoName,"Expression does not have a name."
 3251,chkNoFirstClassNameOf,"Using the 'nameof' operator as a first-class function value is not permitted."
 3252,tcIllegalByrefsInOpenTypeDeclaration,"Byref types are not allowed in an open type declaration."
-3260,tcTypeDoesNotHaveAnyNull,"The type '%s' does not support a nullness qualitification."
+3260,tcTypeDoesNotHaveAnyNull,"The type '%s' does not support a nullness qualification."
 #3261 reserved for ConstraintSolverNullnessWarningEquivWithTypes
 #3261 reserved for ConstraintSolverNullnessWarningWithTypes
 #3261 reserved for ConstraintSolverNullnessWarningWithType
