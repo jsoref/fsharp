@@ -16,9 +16,9 @@ module MemberDefinitions_MethodsAndProperties =
 
     let verifyCompileAndRun = verifyCompile >> run
 
-    // SOURCE=PartiallyOverridenProperty.fs							
-    [<Theory; Directory(__SOURCE_DIRECTORY__, Includes=[|"PartiallyOverridenProperty.fs"|])>]
-    let ``Partially Overriden Property`` compilation =
+    // SOURCE=PartiallyOverriddenProperty.fs							
+    [<Theory; Directory(__SOURCE_DIRECTORY__, Includes=[|"PartiallyOverriddenProperty.fs"|])>]
+    let ``Partially Overridden Property`` compilation =
         compilation
         |> withCheckNulls
         |> typecheck

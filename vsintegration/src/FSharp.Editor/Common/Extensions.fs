@@ -260,7 +260,7 @@ type NavigationItem with
             | Some(SynAccess.Internal _) -> FSharpRoslynGlyph.InterfaceInternal
             | _ -> FSharpRoslynGlyph.InterfacePublic
         | FSharpGlyph.Method
-        | FSharpGlyph.OverridenMethod ->
+        | FSharpGlyph.OverriddenMethod ->
             match x.Access with
             | Some(SynAccess.Private _) -> FSharpRoslynGlyph.MethodPrivate
             | Some(SynAccess.Internal _) -> FSharpRoslynGlyph.MethodInternal

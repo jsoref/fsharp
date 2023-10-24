@@ -486,7 +486,7 @@ type InfoReader(g: TcGlobals, amap: Import.ImportMap) as this =
 
             // MethodImpls contains a list of methods that override.
             // OverrideBy is the method that does the overriding.
-            // Overrides is the method being overriden.
+            // Overrides is the method being overridden.
             (acc, mimpls)
             ||> List.fold (fun acc ilMethImpl ->
                 let overridesName = ilMethImpl.Overrides.MethodRef.Name
@@ -677,7 +677,7 @@ type InfoReader(g: TcGlobals, amap: Import.ImportMap) as this =
     //    inherit A()
     //    static member val A = 0
     // Will get (static B::A, None)
-    static let FilterOverridesOfPropInfosWithOverridenProp findFlag g amap m props = 
+    static let FilterOverridesOfPropInfosWithOverriddenProp findFlag g amap m props = 
         let checkProp prop prop2 =
             not(obj.ReferenceEquals(prop, prop2)) && 
             PropInfosEquivByNameAndSig EraseNone g amap m prop prop2 &&
@@ -960,7 +960,7 @@ type InfoReader(g: TcGlobals, amap: Import.ImportMap) as this =
     /// Get the flattened list of intrinsic properties in the hierarchy
     member infoReader.GetIntrinsicPropInfoWithOverriddenPropOfType optFilter ad allowMultiIntfInst findFlag m ty = 
         infoReader.GetRawIntrinsicPropertySetsOfType(optFilter, ad, allowMultiIntfInst, m, ty) 
-        |> FilterOverridesOfPropInfosWithOverridenProp findFlag infoReader.g infoReader.amap m
+        |> FilterOverridesOfPropInfosWithOverriddenProp findFlag infoReader.g infoReader.amap m
         |> List.concat
 
     member _.GetTraitInfosInType optFilter ty = 
