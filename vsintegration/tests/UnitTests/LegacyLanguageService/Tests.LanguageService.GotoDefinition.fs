@@ -457,7 +457,7 @@ type UsingMSBuild()  =
     member public this.``ModuleDefinition``() =
         this.VerifyGoToDefnSuccessAtStartOfMarker(
             fileContents = """
-                //regretion test for bug 2517
+                //regression test for bug 2517
                 module Foo (*MarkerModuleDefinition*) =
                   let x = ()
                 """,
@@ -468,7 +468,7 @@ type UsingMSBuild()  =
     member public this.``Record.Field.Definition``() = 
         this.VerifyGoToDefnSuccessAtStartOfMarker(
             fileContents = """
-                //regretion test for bug 2518
+                //regression test for bug 2518
                 type MyRec =
                   { myX (*MarkerXFieldDefinition*) : int
                     myY (*MarkerYFieldDefinition*) : int
@@ -485,7 +485,7 @@ type UsingMSBuild()  =
     member public this.``Record.Field.Usage``() = 
         this.VerifyGoToDefnSuccessAtStartOfMarker(
             fileContents = """
-                //regretion test for bug 2518
+                //regression test for bug 2518
                 type MyRec =
                   { myX (*MarkerXFieldDefinition*) : int
                     myY (*MarkerYFieldDefinition*) : int
