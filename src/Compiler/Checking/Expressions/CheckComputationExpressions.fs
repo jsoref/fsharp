@@ -28,7 +28,7 @@ open System.Collections.Generic
 
 type cenv = TcFileState
 
-/// Used to flag if this is the first or a sebsequent translation pass through a computation expression
+/// Used to flag if this is the first or a subsequent translation pass through a computation expression
 [<RequireQualifiedAccess; Struct; NoComparison>]
 type CompExprTranslationPass =
     | Initial
