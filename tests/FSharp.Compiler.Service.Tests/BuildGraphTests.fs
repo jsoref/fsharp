@@ -524,9 +524,9 @@ module BuildGraphTests =
         }
         |> Async.RunImmediate
 
-        // Synchronus code will affect current context:
+        // Synchronous code will affect current context:
 
-        // This is synchrouous, caller's context is affected
+        // This is synchronous, caller's context is affected
         async {
             SetThreadDiagnosticsLoggerNoUnwind DiscardErrorsLogger
             do! Async.SwitchToNewThread()

@@ -3894,7 +3894,7 @@ and OptimizeNewDelegateExpr cenv env (lambdaId, vsl, body, remake) =
              MightMakeCriticalTailcall = false
              Info= valu }
 
-/// Recursive calls that first try to make an expression "fit" the a shape
+/// Recursive calls that first try to make an expression "fit" the shape
 /// where it is about to be consumed.
 and OptimizeExprsThenReshapeAndConsiderSplits cenv env exprs = 
     match exprs with 

@@ -1260,12 +1260,12 @@ module Query =
         | TransInnerResult.Select(canElim, isQTy, mutSource, mutSelectorVar, mutSelectorBody) ->
             MakeSelect(canElim, isQTy, CommitTransInnerResult mutSource, mutSelectorVar, mutSelectorBody)
 
-    /// Given a the inner of query expression in terms of query.For, query.Select, query.Yield, query.Where etc.,
+    /// Given the inner of query expression in terms of query.For, query.Select, query.Yield, query.Where etc.,
     /// and including immutable tuples and immutable records, build an equivalent query expression
     /// in terms of LINQ operators, operating over mutable tuples. Return the conversion
     /// information for the immutable-to-mutable conversion performed so we can undo it where needed.
     ///
-    /// Here 'inner' refers the the part of the query that produces a sequence of results.
+    /// Here 'inner' refers the part of the query that produces a sequence of results.
     ///
     /// The output query will use either Queryable.* or Enumerable.* operators depending on whether
     /// the inputs to the queries have type IQueryable or IEnumerable.

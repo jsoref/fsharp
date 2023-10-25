@@ -9872,7 +9872,7 @@ and TcMethodApplication_UniqueOverloadInference
 
         // "type directed" rule for first-class uses of ambiguous methods.
         // By context we know a type for the input argument. If it's a tuple
-        // this gives us the a potential number of arguments expected. Indeed even if it's a variable
+        // this gives us the potential number of arguments expected. Indeed even if it's a variable
         // type we assume the number of arguments is just "1".
         | None, _ ->
 

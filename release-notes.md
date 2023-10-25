@@ -1600,7 +1600,7 @@ Integrate dotnet/fsharp from 48f932cf8 to 085985140. Notable changes include:
 ### 0.0.85 -
 
 * Fix for FSharpSymbolUse for single case union type #301
-* Added supprt for ReturnParameter in nested functions
+* Added support for ReturnParameter in nested functions
 
 ### 0.0.84 -
 

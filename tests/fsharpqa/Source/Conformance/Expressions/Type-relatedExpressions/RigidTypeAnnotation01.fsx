@@ -4,7 +4,7 @@
 // Rigid type annotation
 // expr : ty
 //
-// rigid type annotation used in the a let-binding
+// rigid type annotation used in the let-binding
 //
 //<Expects status="success"></Expects>
 #light

@@ -593,7 +593,7 @@ type ILMethInfo =
 
     member x.GetNullness(p:ILParameter) = {DirectAttributes = AttributesFromIL(p.MetadataIndex,p.CustomAttrsStored); Fallback = x.NullableFallback}
 
-    /// Get the argument types of the the IL method. If this is an C#-style extension method
+    /// Get the argument types of the IL method. If this is an C#-style extension method
     /// then drop the object argument.
     member x.GetParamTypes(amap, m, minst) =
         x.ParamMetadata |> List.map (fun p -> ImportParameterTypeFromMetadata amap m (x.GetNullness(p)) p.Type x.MetadataScope x.DeclaringTypeInst minst)
