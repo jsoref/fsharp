@@ -6821,7 +6821,7 @@ opt_topSeparators:
   | topSeparator opt_topSeparators { }
   | /* EMPTY */                    { }
 
-/* Seprators in either #light or non-#light */
+/* Separators in either #light or non-#light */
 seps:
   | OBLOCKSEP { None }
   | SEMICOLON { Some (rhs parseState 1) }
