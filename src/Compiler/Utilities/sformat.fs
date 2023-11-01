@@ -18,7 +18,7 @@ namespace Microsoft.FSharp.Text.StructuredPrintfImpl
 #endif
 
 // Breakable block layout implementation.
-// This is a fresh implementation of pre-existing ideas.
+// This is a fresh implementation of preexisting ideas.
 
 open System
 open System.IO
@@ -933,7 +933,7 @@ module Display =
     //
     // Note: The layout code forces breaks based on leaf size and possible break points.
     //       It does not force leaf size based on width.
-    //       So long leaf-string width can not depend on their printing context...
+    //       So long leaf-string width cannot depend on their printing context...
     //
     // The suffix like "+[dd chars]" is 11 chars.
     //                  12345678901
@@ -1138,10 +1138,10 @@ module Display =
                                         let openingBracketIndex = postTextMatch.Groups["prop"].Index - 1
                                         buildObjMessageL remainingPropertyText[openingBracketIndex..] newLayouts
 
-                                | remaingPropertyText ->
+                                | remainingPropertyText ->
                                     // make sure we don't have any stray brackets
                                     let strayClosingMatch =
-                                        System.Text.RegularExpressions.Regex.IsMatch(remaingPropertyText, illFormedBracketPattern)
+                                        System.Text.RegularExpressions.Regex.IsMatch(remainingPropertyText, illFormedBracketPattern)
 
                                     if strayClosingMatch then
                                         None
@@ -1152,7 +1152,7 @@ module Display =
                                             spaceListL (
                                                 List.rev (
                                                     (sepL (tagText preText)
-                                                     ^^ alternativeObjL ^^ sepL (tagText (replaceEscapedBrackets (remaingPropertyText))))
+                                                     ^^ alternativeObjL ^^ sepL (tagText (replaceEscapedBrackets (remainingPropertyText))))
                                                     :: layouts
                                                 )
                                             )

@@ -19,7 +19,7 @@ printfn "%s" x"""
     |> shouldSucceed
 
 [<Fact>]
-let ``Underscore Dot ToString With Space Before Paranthesis - NonAtomic`` () =    
+let ``Underscore Dot ToString With Space Before Parenthesis - NonAtomic`` () =    
     Fsx """
 let x = "a" |> _.ToString () """
     |> withLangVersion80
@@ -85,7 +85,7 @@ let ``DotLambda does NOT generalize automatically to a member based SRTP`` () =
     |> withDiagnostics [(Error 72, Line 1, Col 28, Line 1, Col 47, "Lookup on object of indeterminate type based on information prior to this program point. A type annotation may be needed prior to this program point to constrain the type of the object. This may allow the lookup to be resolved.")] 
 
 [<Fact>]
-let ``DotLambda does allow member based SRTP if labelled explicitely`` () =
+let ``DotLambda does allow member based SRTP if labelled explicitly`` () =
     Fsx "let inline myFunc<'a when 'a:(member WhatANiceProperty: int)> (x: 'a) = x |> _.WhatANiceProperty "
     |> withLangVersion80
     |> typecheck
@@ -140,7 +140,7 @@ let a6 = [1] |> List.map _.ToString()
     |> shouldSucceed
         
 [<Fact>]
-let ``Nested anonymous unary function shorthands fails because of ambigous discard`` () =
+let ``Nested anonymous unary function shorthands fails because of ambiguous discard`` () =
     FSharp """
 module One
 let a : string = {| Inner =  (fun x -> x.ToString()) |} |> _.Inner([5] |> _.[0])

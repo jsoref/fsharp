@@ -198,8 +198,8 @@ type TypeBuilder with
 
         typB.DefineGenericParameters gps
 
-    member typB.DefineConstructorAndLog(attrs, cconv, parms) =
-        let consB = typB.DefineConstructor(attrs, cconv, parms)
+    member typB.DefineConstructorAndLog(attrs, cconv, params) =
+        let consB = typB.DefineConstructor(attrs, cconv, params)
 
         if logRefEmitCalls then
             printfn
@@ -208,7 +208,7 @@ type TypeBuilder with
                 (abs <| hash typB)
                 (LanguagePrimitives.EnumToValue attrs)
                 cconv
-                parms
+                params
 
         consB
 
@@ -1919,7 +1919,7 @@ let rec buildMethodPass3 cenv tref modB (typB: TypeBuilder) emEnv (mdef: ILMetho
     | ".cctor"
     | ".ctor" ->
         let consB = envGetConsB emEnv mref
-        // Constructors can not have generic parameters
+        // Constructors cannot have generic parameters
         assert isNil mdef.GenericParams
         // Value parameters
         let defineParameter (i, attr, name) =
@@ -2228,7 +2228,7 @@ let rec buildTypeDefPass3 cenv nesting modB emEnv (tdef: ILTypeDef) =
 //
 // The code in this phase is fragile.
 //
-// THe background is that System.Reflection.Emit implementations can be finnickity about the
+// THe background is that System.Reflection.Emit implementations can be finickity about the
 // order that CreateType calls are made when types refer to each other. Some of these restrictions
 // are not well documented, or are related to historical bugs where the F# emit code worked around the
 // underlying problems. Ideally the SRE implementation would just "work this out as it goes along" but

@@ -260,7 +260,7 @@ type ResolveDependenciesResult
         roots: string seq
     ) =
 
-    /// Succeded?
+    /// Succeeded?
     member _.Success = success
 
     /// The resolution output log
@@ -313,7 +313,7 @@ type FSharpDependencyManager(outputDirectory: string option, useResultsCache: bo
         //   if the path wasn't supplied or not rooted use the temp directory as the root.
         let specialDir =
             let getProfilePath =
-                // If it has a directory seperator remove it
+                // If it has a directory separator remove it
                 let path = Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile)
 
                 if

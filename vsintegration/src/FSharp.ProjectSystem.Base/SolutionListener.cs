@@ -147,7 +147,7 @@ namespace Microsoft.VisualStudio.FSharp.ProjectSystem
             return VSConstants.E_NOTIMPL;
         }
 
-        public virtual int OnAfterAsynchOpenProject(IVsHierarchy hierarchy, int added)
+        public virtual int OnAfterAsyncOpenProject(IVsHierarchy hierarchy, int added)
         {
             return VSConstants.E_NOTIMPL;
         }
@@ -193,7 +193,7 @@ namespace Microsoft.VisualStudio.FSharp.ProjectSystem
             // Everybody can go here.
             if (!this.isDisposed)
             {
-                // Synchronize calls to the Dispose simulteniously.
+                // Synchronize calls to the Dispose simultaneously.
                 lock (Mutex)
                 {
                     if (!this.isDisposed)

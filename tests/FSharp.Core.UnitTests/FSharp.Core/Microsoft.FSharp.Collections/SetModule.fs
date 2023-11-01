@@ -14,7 +14,7 @@ open Xunit
 Make sure each method works on:
 * Empty set
 * Single-element set
-* Sets with 4 more more elements
+* Sets with 4 or more elements
 *)
 
 type SetModule() =
@@ -169,8 +169,8 @@ type SetModule() =
     member _.Filter() =
         
         let emptyComplex = Set.empty : Set<int * List<string * Set<decimal>> * Set<int * string * (char * char * char)>>
-        let fileredEmpty = Set.filter (fun _ -> false) emptyComplex 
-        if (fileredEmpty = emptyComplex) <> true then Assert.Fail()
+        let filteredEmpty = Set.filter (fun _ -> false) emptyComplex 
+        if (filteredEmpty = emptyComplex) <> true then Assert.Fail()
         
         let nullSet = Set.singleton null
         if nullSet.Count <> 1 then Assert.Fail()
@@ -401,7 +401,7 @@ type SetModule() =
         Assert.True (Array.forall ( (=) true ) elements)
 
     [<Fact>]
-    member _.Parition() =
+    member _.Partition() =
         
         // Empty
         let resulta, resultb = Set.partition (fun (x : int) -> Assert.Fail(); false) Set.empty
@@ -629,7 +629,7 @@ type SetModule() =
                 set <- Set.add i set) 
             // Check that the set equals the full list
             Assert.True(Set.toList set = [0 .. i])
-            // Remove items in permutation order, ensuring set is delt with correctly
+            // Remove items in permutation order, ensuring set is dealt with correctly
             Array.iteri
                 (fun idx i -> set <- Set.remove i set
                               // Verify all elements have been correctly removed
