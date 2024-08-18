@@ -867,7 +867,7 @@ module AsyncPrimitives =
 #endif
 
     ///   - Initial cancellation check
-    ///   - Call syncCtxt.Post with exception protection. THis may fail as it is arbitrary user code
+    ///   - Call syncCtxt.Post with exception protection. This may fail as it is arbitrary user code
 #if BUILDING_WITH_LKG || NO_NULLCHECKING_LIB_SUPPORT
     let CreateSwitchToAsync (syncCtxt: SynchronizationContext) =
 #else

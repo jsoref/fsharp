@@ -217,7 +217,7 @@ type OptionalArgInfo =
                             else MissingValue
                     else
                         DefaultValue
-                                    // See above - the typpe is imported only in order to be analyzed for optional default value, nullness is irrelevant here.
+                                    // See above - the type is imported only in order to be analyzed for optional default value, nullness is irrelevant here.
                 CallerSide (analyze (ImportILTypeFromMetadataSkipNullness amap m ilScope ilTypeInst [] ilParam.Type))
             | Some v ->
                 CallerSide (Constant v)

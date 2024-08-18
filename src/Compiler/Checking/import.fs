@@ -876,7 +876,7 @@ let ImportILAssembly(amap: unit -> ImportMap, m, auxModuleLoader, xmlDocInfoLoad
     CcuThunk.Create(nm, ccuData)
 
 //-------------------------------------------------------------------------
-// From IL types to F# typess
+// From IL types to F# types
 //-------------------------------------------------------------------------
 
 /// Import an IL type as an F# type. importInst gives the context for interpreting type variables.
